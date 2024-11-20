@@ -22,7 +22,7 @@ public class controleLinks {
             System.out.println("nenhum link encontrado.\n");
         } else {
             System.out.println("Links cadastrados:");
-            for (Link link : links) {
+            for (cadastroLinks link : links) {
                 System.out.println(link);
                 System.out.println("--------------------------");
             }
@@ -32,7 +32,7 @@ public class controleLinks {
     // Listar links por assunto
     public void linksPorAssunto(String assunto) {
         boolean encontrou = false;
-        for (Link link : links) {
+        for (cadastroLinks link : links) {
             if (link.getAssunto().equalsIgnoreCase(assunto)) {
                 System.out.println(link);
                 System.out.println("--------------------------");
