@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//Criação da classe controleLinks
+//Criação da classe SistemaLinks
 
 public class controleLinks {
     private ArrayList<cadastroLinks> links;
@@ -36,7 +36,7 @@ public class controleLinks {
     // Listar links por assunto
     public void linksPorAssunto(String assunto) {
         boolean encontrou = false;
-        for (Link link : links) {
+        for (cadastroLinks link : links) {
             if (link.getAssunto().equalsIgnoreCase(assunto)) {
                 System.out.println(link);
                 System.out.println("************");
@@ -51,7 +51,7 @@ public class controleLinks {
     // Salvar links no arquivo
     public void salvarLinks() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(ARQUIVO))) {
-            for (Link link : links) {
+            for (cadastroLinks link : links) {
                 writer.write(link.getUrl() + ";" + link.getDescricao() + ";" + link.getAssunto());
                 writer.newLine();
             }
@@ -88,7 +88,7 @@ public class controleLinks {
 
     // Adicionar link
     public void novoLink(String url, String descricao, String assunto) {
-        Link link = new Link(url, descricao, assunto);
+        cadastroLinks link = new cadastroLinks(url, descricao, assunto);
         links.add(link);
         System.out.println("Link adicionado com sucesso!\n");
     }
@@ -157,7 +157,7 @@ public class controleLinks {
 
     // Método principal para executar o sistema
     public static void main(String[] args) {
-        SistemaLinks sistema = new SistemaLinks();
+        controleLinks sistema = new controleLinks();
         sistema.mostrarMenu();
     }
 }
