@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//Criação da classe SistemaLinks
-public class SistemaLinks {
+//Criação da classe controleLinks
+public class controleLinks {
     private ArrayList<Link> links;
 
-    public SistemaLinks() {
+    public controleLinks() {
         links = new ArrayList<>();
     }
 
