@@ -5,7 +5,7 @@ import java.util.Scanner;
 //Criação da classe controleLinks
 
 public class controleLinks {
-    private ArrayList<Link> links;
+    private ArrayList<cadastroLinks> links;
     private static final String ARQUIVO = "links.txt";
 
     public controleLinks() {
